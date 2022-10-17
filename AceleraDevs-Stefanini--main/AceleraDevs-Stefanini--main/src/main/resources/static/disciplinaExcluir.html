@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Disciplina - Remoção</title>
     <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" href="style.css">
+    
     <nav class="navbar-container">
         <ul class="list-style">
             <li class="list-style2">
@@ -23,25 +25,41 @@
             </li>
         </ul>
     </nav>
+    <h1>Atualização de Disciplinas</h1>
     <form id="my-form2" th:action="@{disciplina}" th:object="${disciplinaDTO}" method="post">
+        
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Nome</label>
+            <input id="field-text" th:field="*{nome}" class="disciplinaDTO" type="text" placeholder="sua turma" required>
+        </div>  
 
-        <label> Nome
-            <input id="field-text" th:field="*{nome}" class="disciplinaDTO" type="text">
-        </label>
-        <label> Codigo
-            <input id="field-text" th:field="*{codigo}" class="disciplinaDTO" type="text">
-        </label>
-        <label>Conteudo
-            <input id="field-text3" th:field="*{conteudoProgramatico}" class="disciplina" type="text">
-        </label>
-        <label> Creditos
-            <input id="field-text4" th:field="*{numeroCreditos}" class="disciplina" type="text">
-        </label>
-        <label> Horas
-        <input id="field-text7" th:field="*{totalHoras}" class="disciplina" type="text">
-        </label>
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Código</label>
+            <input id="field-text" th:field="*{codigo}" class="disciplinaDTO" type="text" placeholder="codigo do curso" required>
+        </div>  
 
-        <button type="submit">Remover</button>
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Conteúdo</label>
+            <input id="field-text3" th:field="*{conteudoProgramatico}" class="disciplina" type="text" placeholder="conteudo do curso" required>
+        </div>  
+
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Créditos</label>
+            <input id="field-text4" th:field="*{numeroCreditos}" class="disciplina" type="text" placeholder="creditos do curso" required>
+        </div>   
+
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Horas</label>
+            <input id="field-text7" th:field="*{totalHoras}" class="disciplina" type="text" placeholder="horas" required>
+        </div>  
+
+        
+
+        <div class="form_grupo">
+            <div class="submit">
+              <button type="submit" name="Submit" class="submit_btn" >Remover</button>
+            </div>
+    </form>
     </form>
 </head>
 <body>

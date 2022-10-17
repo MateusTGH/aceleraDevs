@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Turma</title>
     <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" href="style.css">
+    
     <nav class="navbar-container">
         <ul class="list-style">
             <li class="list-style2">
@@ -31,13 +33,24 @@
             </li>
         </ul>
     </nav>
+    <h1>Formulário de Cadastro de Turma</h1>
     <form id="my-form" th:action="@{turma}" th:object="${turmaDTO}" method="post">
-        <label> Nome
-            <input id="field-text" th:field="*{nome}" class="turma" type="text">
-        </label>
+        
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Nome</label>
+            <input id="field-text" th:field="*{nome}" class="turma" type="text" placeholder="sua turma" required>
+        </div>  
 
-        <button type="submit">Cadastrar</button>
+      
+        <div class="form_grupo">
+            
+            <div class="submit">
+              
+              <button type="submit" name="Submit" class="submit_btn" >Cadastrar</button>
+            
+            </div>
     </form>
+</div>
 </head>
 <body>
 

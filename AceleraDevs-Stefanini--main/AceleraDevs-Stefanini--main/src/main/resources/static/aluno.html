@@ -3,65 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Aluno</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" th:href="@{/style.css}">
-    <nav class="navbar-container">
-        <ul class="list-style">
-            <li class="list-style2">
-                <a class="link-style" target="_blank" href="/aluno">ALUNO</a>
-            </li>
-          	<li class="list-style2">
-                <a class="link-style" href="/alunoEditar">EDITAR DADOS CADASTRAIS
-                </a>
-            </li>
-            <li class="list-style2">
-                <a class="link-style" href="/curso">CURSO
-                </a>
-            </li>
-            <li class="list-style2">
-                <a class="link-style" href="/disciplina">DISCIPLINA
-                </a>
-            </li>
-            <li class="list-style2">
-                <a class="link-style" href="/turma">TURMA
-                </a>
-            </li>
-            <li class="list-style2">
-                <a class="link-style" href="/alunoExcluir">EXCLUSÃO DE ALUNOS
-                </a>
-            </li>
-        </ul>
+
+<div class="container_form">
+    <h1>Formulário de Cadastro</h1>
+    <form id="my-form" th:action="@{curso}" th:object="${cursoDTO}" method="post">
         
-         <ul class="list-style">
-          	<li class="list-style3">
-                <a class="link-style" href="/alunoEditar">EDITAR DADOS CADASTRAIS
-                </a>
-            </li>
-            <li class="list-style3">
-                <a class="link-style" href="/alunoExcluir">EXCLUSÃO DE ALUNOS
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <form id="my-form2" th:action="@{aluno}" th:object="${alunoDTO}" method="post">
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Nome</label>
+            <input id="field-text" th:field="*{nome}" class="alunoDTO" type="text" placeholder="seu nome" required>
+        </div>
 
-        <label> Nome Completo
-            <input id="field-text" th:field="*{nome}" class="alunoDTO" type="text">
-        </label>
-        <label> Matricula
-            <input id="field-text2" th:field="*{matricula}" class="alunoDTO" type="text">
-        </label>
-        <label> CPF
-            <input id="field-text3" th:field="*{cpf}" class="alunoDTO" type="text">
-        </label>
-        <label> Email
-            <input id="field-text4" th:field="*{email}" class="alunoDTO" type="text">
-        </label>
-        <label> Turma
-            <input id="field-text5" th:field="*{idTurma}" class="alunoDTO" type="text">
-        </label>
+        <div class="form_grupo">
+            <label for="matricula" class="form_label">Matricula</label>
+            <input id="field-text2" th:field="*{matricula}" class="alunoDTO" type="text" placeholder="sua matricula" required>
+        </div>
 
-        <button type="submit">Cadastrar</button>
+        <div class="form_grupo">
+            <label for="cpf" class="form_label">CPF</label>
+            <input id="field-text2" th:field="*{matricula}" class="alunoDTO" type="text" placeholder="seu cpf" required>
+        </div>
+        
+        <div class="form_grupo">
+            <label for="e-mail" class="form_label">Email</label>
+            <input id="field-text2" th:field="*{matricula}" class="alunoDTO" type="text" placeholder="seuemail@seuemail.com" required>
+        </div>
+        
+        <div class="form_grupo">
+            <label for="turma" class="form_label">Turma</label>
+            <input id="field-text2" th:field="*{matricula}" class="alunoDTO" type="text" placeholder="sua turma" required>
+        </div>       
+        
+         <div class="form_grupo">
+            <label for="nome" class="form_label">Endereço</label>
+            <input id="field-text4" th:field="*{endereco}" class="alunoDTO" type="text" placeholder="endereço" required>
+        </div> 
+        <div class="form_grupo">
+            
+            <label for="estadocivil" class="text">Estado civil</label>
+            <select name="estadocivil" class="dropdown" required>
+                
+                <option selected disabled class="form_select_option" value="">Selecione</option>
+                <option value="Solteiro" class="form_select_option">Solteiro(a)</option>
+                <option value="Casado" class="form_select_option">Casado(a) </option>
+                <option value="Divorciado" class="form_select_option">Divorciado(a)</option>                    
+                <option value="Viúvo" class="form_select_option">Viúvo(a)</option>                    
+            
+            </select>
+        </div>
+        <div class="form_grupo">
+            <span class="legenda">Sexo:</span>
+            
+            <div class="radio-btn">
+                <input type="radio" class="form_new_input" id="masculino" name="sexo" value="Masculino" required="required">
+                <label for="masculino" class="radio_label form_label"> <span class="radio_new_btn"></span> Masculino</label>
+            </div>
+            <div class="radio-btn">
+                <input type="radio" class="form_new_input" id="feminino" name="sexo" value="Feminino" required="required">
+                <label for="feminino" class="radio_label form_label"> <span class="radio_new_btn"></span> Feminino</label>
+            </div>
+        </div>
+      
+        <div class="form_grupo">
+            
+            
+            
+
+            <div class="submit">
+              
+              <input type="hidden" id="field-text2" th:field="*{matricula}" class="alunoDTO" type="text">
+              <button type="submit" name="Submit" class="submit_btn" >Cadastrar</button>
+            
+            </div>
     </form>
+</div>
 </head>
 <body>
 

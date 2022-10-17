@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Turma - Edição</title>
     <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" href="style.css">
+    
+    
     <nav class="navbar-container">
         <ul class="list-style">
             <li class="list-style2">
@@ -23,16 +26,29 @@
             </li>
         </ul>
     </nav>
+        
+    <h1>Atualização de Turma</h1>
     <form id="my-form" th:action="@{turma}" th:object="${turmaDTO}" method="post">
-        <label> Nome
-            <input id="field-text" th:field="*{nome}" class="turma" type="text">
-        </label>
-        <label> Disciplinas
-            <input id="field-text" th:field="*{disciplina}" class="turma" type="text">
-        </label>
+        
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Nome</label>
+            <input id="field-text" th:field="*{nome}" class="turma" type="text" placeholder="sua turma" required>
+        </div>  
+         <div class="form_grupo">
+            <label for="nome" class="form_label">Disciplinas</label>
+            <input id="field-text" th:field="*{disciplina}" class="turma" type="text" placeholder="disciplina" required>
+        </div>  
 
-        <button type="submit">Editar</button>
+      
+        <div class="form_grupo">
+            
+            <div class="submit">
+              
+              <button type="submit" name="Submit" class="submit_btn" >Atualizar</button>
+            
+            </div>
     </form>
+    
 </head>
 <body>
 

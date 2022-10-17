@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Curso - Edição</title>
     <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" href="style.css">
+    
     <nav class="navbar-container">
         <ul class="list-style">
             <li class="list-style2">
@@ -23,16 +25,25 @@
             </li>
         </ul>
     </nav>
+<div class="container_form">
+    <h1>Formulário de Atualização de Curso</h1>
     <form id="my-form" th:action="@{curso}" th:object="${cursoDTO}" method="post">
+        
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Nome</label>
+            <input id="field-text" th:field="*{name}" class="cursoDTO" type="text" placeholder="seu curso" required>
+        </div>
 
-        <label>NOME
-            <input id="field-text" th:field="*{name}" class="cursoDTO" type="text">
-        </label>
-        <label>HORAS
-            <input id="field-text2" th:field="*{totalGrade}" class="cursoDTO" type="text">
-        </label>
+        <div class="form_grupo">
+            <label for="matricula" class="form_label">Horas</label>
+            <input id="field-text2" th:field="*{totalGrade}" class="cursoDTO" type="text" placeholder="suas horas" required>
+        </div>     
 
-        <button type="submit">Editar</button>
+      
+        <div class="form_grupo">    
+            <div class="submit">
+              <button type="submit" name="Submit" class="submit_btn" >Atualizar</button>           
+         </div>
     </form>
 </head>
 <body>

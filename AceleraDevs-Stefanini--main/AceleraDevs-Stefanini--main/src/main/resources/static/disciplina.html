@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Disciplina</title>
     <link rel="stylesheet" th:href="@{/style.css}">
-    <nav class="navbar-container">
+    <link rel="stylesheet" href="style.css">
+    
         <ul class="list-style">
             <li class="list-style2">
                 <a class="link-style" target="_blank" href="/aluno">ALUNO</a>
@@ -23,41 +24,61 @@
             </li>
         </ul>
         
-        <ul class="list-style">
+           <ul class="list-style">
             <li class="list-style3">
-                <a class="link-style" target="_blank" href="/disciplinaEditar">Editar Disciplinas</a>
+                <a class="link-style" target="_blank" href="/turmaEditar">Editar Disciplina</a>
             </li>
             <li class="list-style3">
-                <a class="link-style" target="_blank" href="/disciplinaExcluir">Remover Disciplinas</a>
+                <a class="link-style" target="_blank" href="/turmaExcluir">Remover Disciplina</a>
             </li>
         </ul>
-    </nav>
+	<div class="container_form">
+    <h1>Formulário de Cadastro de Disciplinas</h1>
     <form id="my-form2" th:action="@{disciplina}" th:object="${disciplinaDTO}" method="post">
+        
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Nome</label>
+            <input id="field-text" th:field="*{nome}" class="disciplinaDTO" type="text" placeholder="sua turma" required>
+        </div>  
 
-        <label> Nome
-            <input id="field-text" th:field="*{nome}" class="disciplinaDTO" type="text">
-        </label>
-        <label> Codigo
-            <input id="field-text" th:field="*{codigo}" class="disciplinaDTO" type="text">
-        </label>
-        <label>Conteudo
-            <input id="field-text3" th:field="*{conteudoProgramatico}" class="disciplina" type="text">
-        </label>
-        <label> Creditos
-            <input id="field-text4" th:field="*{numeroCreditos}" class="disciplina" type="text">
-        </label>
-        <label> Turma
-            <input id="field-text5" th:field="*{turma}" class="disciplina" type="text">
-        </label>
-        <label> Curso
-            <input id="field-text6" th:field="*{curso}" class="disciplina" type="text">
-        </label>
-        <label> Horas
-        <input id="field-text7" th:field="*{totalHoras}" class="disciplina" type="text">
-        </label>
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Código</label>
+            <input id="field-text" th:field="*{codigo}" class="disciplinaDTO" type="text" placeholder="codigo do curso" required>
+        </div>  
 
-        <button type="submit">Cadastrar</button>
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Conteúdo</label>
+            <input id="field-text3" th:field="*{conteudoProgramatico}" class="disciplina" type="text" placeholder="conteudo do curso" required>
+        </div>  
+
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Créditos</label>
+            <input id="field-text4" th:field="*{numeroCreditos}" class="disciplina" type="text" placeholder="creditos do curso" required>
+        </div>  
+
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Turma</label>
+            <input id="field-text5" th:field="*{turma}" class="disciplina" type="text" placeholder="sua turma" required>
+        </div>  
+
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Curso</label>
+            <input id="field-text6" th:field="*{curso}" class="disciplina" type="text" placeholder="curso" required>
+        </div>  
+
+        <div class="form_grupo">
+            <label for="nome" class="form_label">Horas</label>
+            <input id="field-text7" th:field="*{totalHoras}" class="disciplina" type="text" placeholder="horas" required>
+        </div>  
+
+        
+
+        <div class="form_grupo">
+            <div class="submit">
+              <button type="submit" name="Submit" class="submit_btn" >Cadastrar</button>
+            </div>
     </form>
+</div>
 </head>
 <body>
 
